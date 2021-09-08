@@ -1,0 +1,9 @@
+header,footer{
+    background-color: aqua;
+    min-height: 100px;
+}
+
+main{
+    min-height: 400px;
+    background-color: bisque;
+}

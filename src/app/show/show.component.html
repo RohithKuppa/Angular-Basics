@@ -1,0 +1,8 @@
+<p>show works!</p>
+
+<input type="text" name="text" id="name" [(ngModel)] = "traineeName" #userName/>
+<br>
+<br>
+<button class="btn btn-primary" [hidden] = "!traineeName" (click)= "fun(userName.value)" >Submit</button>
+
+<h3>Hello {{traineeName}}</h3>

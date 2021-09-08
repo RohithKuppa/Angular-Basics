@@ -1,0 +1,36 @@
+<form (submit)="addBook(f)" class="form-group" #f="ngForm">
+    <label for="id">ID</label>
+    <input type="number" name="id" id="id" [(ngModel)]="book.id" ngModel class="form-control" #bId="ngModel" required
+                        [class.is-invalid] = "bId.invalid && bId.touched">
+    <p *ngIf="bId.invalid && bId.touched" class="text-danger">ID is required</p>
+    
+    <label for="id">TITLE</label>
+    <input type="text" name="title" id="title" [(ngModel)]="book.title" ngModel class="form-control" #bTitle="ngModel" required
+                        [class.is-invalid] = "bTitle.invalid && bTitle.touched">
+    <p *ngIf="bTitle.invalid && bTitle.touched" class="text-danger">Title is required</p>
+    
+    <label for="id">AUTHOR</label>
+    <input type="text" name="author" id="author" [(ngModel)]="book.author" ngModel class="form-control" #bAuthor="ngModel" required
+                        [class.is-invalid] = "bAuthor.invalid && bAuthor.touched">
+    <p *ngIf="bAuthor.invalid && bAuthor.touched" class="text-danger">Author name is required</p>
+    
+    <label for="id">PRICE</label>
+    <input type="number" name="price" id="price" [(ngModel)]="book.price" ngModel class="form-control" #bPrice="ngModel" required
+                        [class.is-invalid] = "bPrice.invalid && bPrice.touched">
+    <p *ngIf="bPrice.invalid && bPrice.touched" class="text-danger">Price is required</p>
+
+    <br>
+    <button class="btn btn-success" [disabled] = "!f.valid">Submit</button>
+
+</form>
+
+<!--
+<p  *ngIf="book.id" [ngStyle]="{'backgroundColor': book.price>500?'red':'green'}">
+    {{book|json}}
+</p>
+-->
+
+<p  *ngFor="let book of books" [ngStyle]="{'backgroundColor': book.price>500?'red':'green'}">
+    {{book|json}}
+</p>
+
